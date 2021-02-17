@@ -1,28 +1,59 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="star-wars-container">
+    <div v-if="isLoading">
+      <half-circle-spinner
+          :animation-duration="1000"
+          :size="60"
+          color="#ff1d5e"
+      />
+    </div>
+    <div v-else-if="isSuccess" class="star-wars-container__body">
+      <ul>
+        <li v-for="person in people" :key="person.name">
+          <a :href="person.name">name: {{ person.name }}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+/**
+ * External dependencies.
+ */
+import { useQuery } from '@cytools/vue-query';
+import { HalfCircleSpinner } from 'epic-spinners';
+
+/**
+ * Internal dependencies.
+ */
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    HalfCircleSpinner,
+  },
+
+  setup() {
+    const {
+      data: people,
+      isIdle,
+      isError,
+      isSuccess,
+      isLoading,
+    } = useQuery('star-wars-people', () => fetch('https://swapi.dev/api/people')
+        .then(response => response.json())
+        .then(data => data.results),
+    );
+
+    return {
+      people,
+      isIdle,
+      isError,
+      isLoading,
+      isSuccess,
+    };
+  },
+};
+</script>
