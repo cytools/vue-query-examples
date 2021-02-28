@@ -836,10 +836,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@cytools/vue-query@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@cytools/vue-query/-/vue-query-0.0.9.tgz#1f1c9eb651577f788c02be25c3322d47f7a69445"
-  integrity sha512-uHlEDch0PDhFLgyl9S9PVLKpCHLjZTM1mDO1swosPFPqBbyay4z5OPB4QyCs8mG5eT3SjmhGlhRkkDDPen1yBg==
+"@cytools/vue-query@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@cytools/vue-query/-/vue-query-0.1.0.tgz#844d8f5fbf5e47a6382de30febaaa26b984792e6"
+  integrity sha512-/cv+BOM88T++0YTihMIk4/pHGPOsjhUc3OvJ5BqCcgn1UlYoUWLEDcJ0gUWeReYHfIA5GeQM6B0/3FEJfi/8Pg==
   dependencies:
     lodash "^4.17.20"
     vue-demi "^0.6.0"

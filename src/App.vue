@@ -2,27 +2,17 @@
   <div class="overflow-auto">
     <p class="mt-3">Current Page: {{ currentPage }}</p>
 
-    <template
+    <b-list-group
         v-if="isSuccess"
     >
-      <b-card
-          v-for="person in people"
-          :key="person.id"
-          :title="person.name"
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
-      >
-        <b-card-text>
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </b-card-text>
+      <b-list-group-item v-for="person in people" :key="person.id">{{ person.name }}</b-list-group-item>
+    </b-list-group>
 
-        <b-button href="#" variant="primary">Go somewhere</b-button>
-      </b-card>
-    </template>
-
-    <b-button variant="primary" @click="fetchPrevPage">Previous Page</b-button>
-    <b-button variant="primary" @click="fetchNextPage">Next Page</b-button>
+    <div v-if="canShowPaginationButtons" class="pagination">
+      <b-button :disabled="!isPrevButtonActive" variant="primary" @click="fetchPrevPage">Previous Page</b-button>
+      <b-button :disabled="!isNextButtonActive" variant="primary" @click="fetchNextPage">Next Page</b-button>
+    </div>
+    <!-- /.pagination -->
 
     <half-circle-spinner
         v-if="isLoading || isFetching"
@@ -58,11 +48,14 @@ export default {
       hasMorePages,
       fetchPrevPage,
       fetchNextPage,
+      isNextButtonActive,
+      isPrevButtonActive,
       isIdle,
       isError,
       isSuccess,
       isLoading,
       isFetching,
+      canShowPaginationButtons,
     } = usePaginateQuery('star-wars-people', async (page) => {
           const { results, next } = await fetch(`https://swapi.dev/api/people?page=${page}`)
               .then(response => response.json());
@@ -85,6 +78,9 @@ export default {
       hasMorePages,
       fetchNextPage,
       fetchPrevPage,
+      isNextButtonActive,
+      isPrevButtonActive,
+      canShowPaginationButtons,
     };
   },
 };
