@@ -9,8 +9,8 @@
       ></b-form-input>
     </b-form-group>
 
-    <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-      <b-form-select v-model="selectedPersonId" :options="peopleIds"></b-form-select>
+    <b-form-group id="input-group-3" label="Choose id to update" label-for="input-3">
+      <b-form-select id="input-3" v-model="selectedPersonId" :options="peopleIds"></b-form-select>
     </b-form-group>
   </b-form>
 </template>
@@ -27,7 +27,7 @@ export default {
 
   setup() {
     const newName = ref('');
-    const selectedPersonId = ref(0);
+    const selectedPersonId = ref(1);
     const { queryClient } = useQueryClient();
     const { mutate: changePersonName } = useMutation(
         async (name, personId) => {
@@ -72,7 +72,8 @@ export default {
         const ids = queryClient.getQueriesWithStartingKey('people')
             .value
             ?.map(query => query?.query?.data?.data?.map(person => person.id))
-            ?.flat() || [];
+            ?.flat()
+            ?.filter(val => val) || [];
 
         return ids.map(id => ({ value: id, text: id }));
       }),
