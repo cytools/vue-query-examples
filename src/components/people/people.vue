@@ -18,7 +18,7 @@
     </div>
     <!-- /.pagination -->
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column justify-content-center align-items-center">
       <half-circle-spinner
           v-if="isLoading || isFetching"
           :animation-duration="1000"
