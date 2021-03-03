@@ -25,6 +25,8 @@
           :size="60"
           color="#ff1d5e"
       />
+
+      <change-person-name-form />
     </div>
   </div>
 </template>
@@ -35,6 +37,7 @@
  */
 import { usePaginateQuery } from '@cytools/vue-query';
 import { HalfCircleSpinner } from 'epic-spinners';
+import ChangePersonNameForm from '@/components/change-person-name-form/change-person-name-form';
 
 /**
  * Internal dependencies.
@@ -44,6 +47,7 @@ export default {
   name: 'App',
 
   components: {
+    ChangePersonNameForm,
     HalfCircleSpinner,
   },
 
