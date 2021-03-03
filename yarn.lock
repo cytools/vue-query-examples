@@ -836,10 +836,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@cytools/vue-query@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@cytools/vue-query/-/vue-query-0.1.0.tgz#844d8f5fbf5e47a6382de30febaaa26b984792e6"
-  integrity sha512-/cv+BOM88T++0YTihMIk4/pHGPOsjhUc3OvJ5BqCcgn1UlYoUWLEDcJ0gUWeReYHfIA5GeQM6B0/3FEJfi/8Pg==
+"@cytools/vue-query@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@cytools/vue-query/-/vue-query-0.1.1.tgz#aa1404feb7e779039372c9d90aaf6f13d46089cb"
+  integrity sha512-NzxZuUl1FD5B14mZyI1Dp/yhlgd4Cqnxb6nRpQP8QfVYVj2gfNKUeC5xlA8b+S4JcwMUUcQoDOJBO2u0EX91Wg==
   dependencies:
     lodash "^4.17.20"
     vue-demi "^0.6.0"
@@ -8103,9 +8103,9 @@ vm-browserify@^1.0.1:
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
 vue-demi@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.6.0.tgz#e314282f704cb449119b9fd002cbbc0e39f591fe"
-  integrity sha512-8GEJa0mHJpYJeGeq5fD1pJct2kfdl30PHfmL1NaJ97mgKPyKojlIRt/3inGBK4Y0ylCI6T5vOo3chwpqDOq/Hw==
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.6.2.tgz#ed9633eaa69b7409cc6e8328e8a6c3d31ab39319"
+  integrity sha512-4KfwxbqsZcDz7UryD11oHa6FLK9Gzx4MIwAEcP37IbUdXuF6DHg2w9L5Zv5t+FNqsuAjEQ2NnGVIZ3u71y435Q==
 
 vue-eslint-parser@^7.0.0:
   version "7.5.0"
